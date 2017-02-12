@@ -4,7 +4,14 @@ angular.module ('app.controllers.novo-contato',[]).controller('novoContatoContro
 
 $scope.images = [];
 
-console.log("oieeee");
+
+
+
+$scope.urlForImage = function(imageName) {
+  var name = imageName.substr(imageName.lastIndexOf('/') + 1);
+  var trueOrigin = cordova.file.dataDirectory + name;
+  return trueOrigin;
+}
  
 $scope.addImage = function() {
 	// 2
