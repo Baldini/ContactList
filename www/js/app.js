@@ -12,6 +12,7 @@ angular.module('contact', ['ionic'])
       animation: 'slide-in-up'
     });
 
+
     // Called when the form is submitted
     $scope.createContact = function(contact) {
       $scope.contacts.push({
@@ -32,4 +33,4 @@ angular.module('contact', ['ionic'])
     $scope.closeNewContact = function() {
       $scope.contactModal.hide();
     };
-  })
+  });

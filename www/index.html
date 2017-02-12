@@ -23,9 +23,8 @@
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
-  <!-- ionic/angularjs js -->
-  <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
 
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
@@ -46,12 +45,15 @@
         </button>
       </ion-header-bar>
       <ion-content>
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="Pesquisar" placeholder="Pesquisar" ng-model="searchQuery"
         <!-- our list and list items -->
         <ion-list>
           <ion-item ng-repeat="contact in contacts">
             <ion-item>
               <ion-avatar item-left>
-                <img src="{{contact.img}}">
+                <img src={{contact.img}}>
               </ion-avatar>
               <h2>{{contact.name}}</h2>
               <p>{{contact.tel}}</p>
@@ -92,5 +94,4 @@
   </script>
 
 </body>
-
 </html>
