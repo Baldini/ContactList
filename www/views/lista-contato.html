@@ -1,0 +1,48 @@
+ <ion-content>
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="Pesquisar" placeholder="Pesquisar" ng-model="searchQuery"
+        <!-- our list and list items -->
+        <ion-list>
+          <ion-item ng-repeat="contact in contacts">
+            <ion-item>
+              <ion-avatar item-left>
+                <img src={{contact.img}}>
+              </ion-avatar>
+              <h2>{{contact.name}}</h2>
+              <p>{{contact.tel}}</p>
+            </ion-item>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-side-menu-content>
+  </ion-side-menus>
+
+  <script id="new-contact.html" type="text/ng-template">
+    <div class="modal">
+      <!-- Modal header bar -->
+      <ion-header-bar class="bar-secondary">
+        <h1 class="title">New Task</h1>
+        <button class="button button-clear button-positive" ng-click="closeNewContact()">Cancel</button>
+      </ion-header-bar>
+
+      <!-- Modal content area -->
+      <ion-content>
+        <form ng-submit="createContact(contact)">
+          <div class="list">
+            <label class="item item-input">
+            <input type="text" placeholder="Picture" ng-model="contact.img">
+            <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="contact.name">
+            <label class="item item-input">
+            <input type="tel" placeholder="Number" ng-model="contact.tel">
+          </label>
+          </div>
+          <div class="padding">
+            <button type="submit" class="button button-block button-positive">Create Contact</button>
+          </div>
+        </form>
+      </ion-content>
+    </div>
+
+  </script>

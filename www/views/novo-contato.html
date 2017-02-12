@@ -1,0 +1,10 @@
+
+<ion-view class="has-header padding" >
+    <span>ugugugugugtutututututu</span>
+  <button class="button button-energized" ng-click="addImage()">
+	  Add image
+  </button><br><br>
+  <ion-scroll>
+	  <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>
+  </ion-scroll>
+</ion-view>
