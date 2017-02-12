@@ -1,24 +1,35 @@
-// Ionic Starter App
+angular.module('contact', ['ionic'])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+  .controller('contactCtrl', function($scope, $ionicModal) {
+    // No need for testing data anymore
+    $scope.contacts = [];
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    // Create and load the Modal
+    $ionicModal.fromTemplateUrl('new-contact.html', function(modal) {
+      $scope.contactModal = modal;
+    }, {
+      scope: $scope,
+      animation: 'slide-in-up'
+    });
 
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
-      cordova.plugins.Keyboard.disableScroll(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+    // Called when the form is submitted
+    $scope.createContact = function(contact) {
+      $scope.contacts.push({
+        name: contact.name,
+        tel: contact.tel,
+        img: contact.img
+      });
+      $scope.contactModal.hide();
+      //window.localStorage['tasks'] = angular.toJson($scope.tasks);
+    };
+
+    // Open our new task modal
+    $scope.newContact = function() {
+      $scope.contactModal.show();
+    };
+
+    // Close the new task modal
+    $scope.closeNewContact = function() {
+      $scope.contactModal.hide();
+    };
+  })
