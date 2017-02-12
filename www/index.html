@@ -25,6 +25,8 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- auto list divider script -->
+    <script src="ionic-ion-autoListDivider.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -37,12 +39,16 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Contact List</h1>
+        <button class="button icon ion-person-add" ng-click="addContact()"></button>
       </ion-header-bar>
       <ion-content>
          <label class="item item-input">
            <i class="icon ion-search placeholder-icon"></i>
            <input type="Pesquisar" placeholder="Pesquisar" ng-model="searchQuery"
       </ion-content>
+      <ion-list>
+	<ion-item auto-list-divider auto-list-divider-value="{{item.user.name.first}}" class="item-avatar" ng-repeat="item in items">
+</ion-list>
     </ion-pane>
   </body>
 </html>
