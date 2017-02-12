@@ -8,5 +8,10 @@ url: '/novo-contato',
 templateUrl: 'views/novo-contato.html',
 controller: 'novoContatoController'
 
+}).state('lista-contato',{
+url: '/lista-contato',
+templateUrl: 'views/lista-contato.html',
+controller: 'contactCtrl'
+
 })
 });

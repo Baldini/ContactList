@@ -1,4 +1,6 @@
-.controller('contactCtrl', function($scope, $ionicModal, $state) {
+'use strict';
+
+angular.module ('app.controllers.lista-contato',[]).controller('contactCtrl', function($scope, $ionicModal, $state) {
     // No need for testing data anymore
     $scope.contacts = [];
 
@@ -32,4 +34,4 @@
     // Close the new task modal
     $scope.closeNewContact = function() {
       $scope.contactModal.hide();
-    };
+}});
