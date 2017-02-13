@@ -12,6 +12,8 @@ angular.module ('app.controllers.lista-contato',[]).controller('contactCtrl', fu
       animation: 'slide-in-up'
     });
 
+ 
+
 
     // Called when the form is submitted
     $scope.createContact = function(contact) {

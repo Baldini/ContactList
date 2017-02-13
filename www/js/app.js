@@ -1,6 +1,9 @@
 angular.module('app', ['ionic', 'ngCordova', 'app.routes', 'app.controllers'])
 
-  .controller('ctrl', function($scope, $ionicModal, $state) {
+  .controller('ctrl', function($rootScope,$scope, $ionicModal, $state) {
+
+
+$rootScope.contacts = [];
 
 $state.go('lista-contato');
     // Open our new task modal

@@ -1,16 +1,23 @@
 'use strict';
 
-angular.module ('app.controllers.novo-contato',[]).controller('novoContatoController', function($scope, $cordovaCamera, $cordovaFile) {
+angular.module ('app.controllers.novo-contato',[]).controller('novoContatoController', function($rootScope,$scope, $cordovaCamera, $cordovaFile) {
 
 $scope.images = [];
+$scope.contact = null;
 
 
+$scope.addNewContact = function() {
+	 
+	$rootScope.contacts.push($scope.contact);
+	console.log($scope.contact);
+	console.log($rootScope.contacts[0]);
+}
 
 
 $scope.urlForImage = function(imageName) {
   var name = imageName.substr(imageName.lastIndexOf('/') + 1);
-  var trueOrigin = cordova.file.dataDirectory + name;
-  return trueOrigin;
+  $scope.contact.imgUrl= cordova.file.dataDirectory + name;
+  return $scope.contact.imgUrl;
 }
  
 $scope.addImage = function() {
