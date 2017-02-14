@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module ('app.controllers.novo-contato',[]).controller('novoContatoController', function($rootScope,$scope, $cordovaCamera, $cordovaFile) {
+angular.module ('app.controllers.novo-contato',[]).controller('novoContatoController', function($rootScope,$scope, $cordovaCamera, $cordovaFile, $state) {
 
 $scope.images = [];
 $scope.contact = null;
@@ -8,9 +8,11 @@ $scope.contact = null;
 
 $scope.addNewContact = function() {
 	 
+	$scope.contact.firstLetter = $scope.contact.name.substring(0, 1);
 	$rootScope.contacts.push($scope.contact);
 	console.log($scope.contact);
 	console.log($rootScope.contacts[0]);
+	$state.go("lista-contato");
 }
 
 
@@ -89,6 +91,5 @@ $scope.addImage = function() {
 
 
 });
-
 
 

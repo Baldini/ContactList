@@ -1,4 +1,4 @@
-angular.module('app', ['ionic', 'ngCordova', 'app.routes', 'app.controllers'])
+angular.module('app', ['ionic', 'ngCordova', 'angular.filter', 'app.routes', 'app.controllers'])
 
   .controller('ctrl', function($rootScope,$scope, $ionicModal, $state) {
 
