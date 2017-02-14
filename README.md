@@ -16,5 +16,6 @@ To start:
 
 Install plugins cmd
 
-cordova plugin add cordova-plugin-camera
-cordova plugin add cordova-plugin-file
+-cordova plugin add cordova-plugin-camera
+
+-cordova plugin add cordova-plugin-file
